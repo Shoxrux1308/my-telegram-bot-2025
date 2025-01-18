@@ -36,9 +36,7 @@ class Bot:
         data={
             "chat_id": chat_id,
         }
-        files={
-            "photo": open(photo, "rb")
-            }
+        
         with open(photo, "rb") as f:
             response=requests.post(self.base_url + "sendPhoto", data=data, files={"photo": f})
         return response.json()
